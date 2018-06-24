@@ -1,0 +1,26 @@
+<li [ngClass]="{'list-group-item': true, 
+				'list-group-item-success': loveIts > 0,
+				'list-group-item-danger': loveIts < 0}">
+	<div class="container">
+		<div class="row d-flex justify-content-between">
+			<div class="float-left">
+				<h3>{{ title }}</h3>
+			</div>
+			<div class="float-right">
+				<p>{{created_at | date: 'MM/dd/y,  h:m a' | uppercase}}</p>
+			</div>
+		</div>
+		<div class="row" id="blogDate">
+			<div class="col-xs-12">
+				<p>{{ content }}</p>
+			</div>
+		</div>
+		<div class="row d-flex justify-content-between">
+			<div class="btn-group">
+				<button class="btn btn-success" (click)="onLike()">Like</button>
+				<button class="btn btn-danger" (click)="onDislike()">Dislike</button>	
+			</div>
+			<p>likes : {{loveIts}}</p>
+		</div>	
+	</div>
+</li>
